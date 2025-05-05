@@ -1,0 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
+main {
+  overflow-y: hidden;
+}
+
+section {
+  scroll-margin-top: 64px;
+}

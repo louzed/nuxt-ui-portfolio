@@ -1,0 +1,140 @@
+:root {
+  --ui-text-dimmed: var(--ui-color-neutral-400);
+  --ui-text-muted: var(--ui-color-neutral-600);
+  --ui-text-toned: var(--ui-color-neutral-700);
+  --ui-text: var(--ui-color-neutral-800);
+  --ui-text-highlighted: var(--ui-color-neutral-900);
+  --ui-text-inverted: var(--color-white);
+
+  --ui-bg: var(--ui-color-neutral-50);
+  --ui-bg-muted: var(--ui-color-neutral-100);
+  --ui-bg-elevated: var(--ui-color-neutral-200);
+  --ui-bg-accented: var(--ui-color-neutral-300);
+  --ui-bg-inverted: var(--ui-color-neutral-900);
+
+  --ui-border: var(--ui-color-neutral-200);
+  --ui-border-muted: var(--ui-color-neutral-300);
+  --ui-border-accented: var(--ui-color-neutral-300);
+  --ui-border-inverted: var(--ui-color-neutral-900);
+
+  --scrollbar-color-thumb: var(--ui-color-neutral-500);
+  --scrollbar-color-track: var(--ui-color-neutral-200);
+  --scrollbar-width: thin;
+  --scrollbar-width-legacy: 10px;
+
+  --logo-fill: none;
+  --logo-bg: var(--ui-color-neutral-400);
+}
+
+.dark {
+  --ui-text-dimmed: var(--ui-color-neutral-500);
+  --ui-text-muted: var(--ui-color-neutral-400);
+  --ui-text-toned: var(--ui-color-neutral-300);
+  --ui-text: var(--ui-color-neutral-200);
+  --ui-text-highlighted: var(--color-white);
+  --ui-text-inverted: var(--ui-color-neutral-900);
+
+  --ui-bg: var(--ui-color-neutral-950);
+  --ui-bg-muted: var(--ui-color-neutral-900);
+  --ui-bg-elevated: var(--ui-color-neutral-800);
+  --ui-bg-accented: var(--ui-color-neutral-700);
+  --ui-bg-inverted: var(--color-neutral-100);
+
+  --ui-border: var(--ui-color-neutral-800);
+  --ui-border-muted: var(--ui-color-neutral-600);
+  --ui-border-accented: var(--ui-color-neutral-800);
+  --ui-border-inverted: var(--color-white);
+
+  --scrollbar-color-thumb: var(--ui-color-neutral-500);
+  --scrollbar-color-track: var(--ui-color-neutral-800);
+  --scrollbar-width: thin;
+  --scrollbar-width-legacy: 10px;
+
+  --logo-fill: none;
+  --logo-bg: var(--ui-color-neutral-600);
+}
+
+/* ======================================== */
+/* Nuxt UI Theme Variable Classes           */
+/* ======================================== */
+
+/* Text Color Utilities */
+/* Apply these classes to set the text color */
+.text-dimmed {
+  color: var(--ui-text-dimmed);
+}
+.text-muted {
+  color: var(--ui-text-muted);
+}
+.text-toned {
+  color: var(--ui-text-toned);
+}
+/* Using .text-default for the base --ui-text variable */
+.text-default {
+  color: var(--ui-text);
+}
+.text-highlighted {
+  color: var(--ui-text-highlighted);
+}
+.text-inverted {
+  color: var(--ui-text-inverted);
+}
+
+/* Background Color Utilities */
+/* Apply these classes to set the background color */
+/* Using .bg-default for the base --ui-bg variable */
+.bg-default {
+  background-color: var(--ui-bg);
+}
+.bg-muted {
+  background-color: var(--ui-bg-muted);
+}
+.bg-elevated {
+  background-color: var(--ui-bg-elevated);
+}
+.bg-accented {
+  background-color: var(--ui-bg-accented);
+}
+.bg-inverted {
+  background-color: var(--ui-bg-inverted);
+}
+
+/* Border Color Utilities */
+/* IMPORTANT: Apply these alongside a border-width utility like Tailwind's 'border' class */
+/* Example: <div class="border border-default">...</div> */
+
+/* Using .border-default for the base --ui-border variable */
+.border-default {
+  border-color: var(--ui-border);
+}
+.border-muted {
+  border-color: var(--ui-border-muted);
+}
+.border-accented {
+  border-color: var(--ui-border-accented);
+}
+.border-inverted {
+  border-color: var(--ui-border-inverted);
+}
+
+/* Modern browsers with `scrollbar-*` support */
+@supports (scrollbar-width: auto) {
+  * {
+      scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+      scrollbar-width: var(--scrollbar-width);
+  }
+}
+
+/* Legacy browsers with `::-webkit-scrollbar-*` support */
+@supports selector(::-webkit-scrollbar) {
+  ::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-color-thumb);
+  }
+  ::-webkit-scrollbar-track {
+      background: var(--scrollbar-color-track);
+  }
+  ::-webkit-scrollbar {
+      max-width: var(--scrollbar-width-legacy);
+      max-height: var(--scrollbar-width-legacy);
+  }
+}
