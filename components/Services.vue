@@ -11,8 +11,8 @@
     <UContainer class="lg:flex lg:border-r lg:border-l border-muted">
       <div class="flex flex-col lg:w-1/2 px-4 lg:px-8 py-16 lg:border-r border-b lg:border-b-0 border-muted">
         <div class="isolate flex flex-col items-start gap-2">
-          <div ref="IconContainer"  class="flex mb-2 rounded-md bg-muted overflow-hidden">
-            <UIcon name="i-line-md-compass-loop" class="size-12 mx-2 my-2" />
+          <div v-intersection-observer.once="handleIntersection"  class="isolate flex mb-2 rounded-md bg-muted overflow-hidden">
+            <UIcon v-if="isVisible" name="i-line-md-compass-loop" class="isolate size-12 mx-2 my-2" />
           </div>
           <h4>UX & UI Design</h4>
           <p class="text-lg text-muted max-w-lg mb-4">
@@ -28,8 +28,8 @@
 
       <div class="flex flex-col lg:w-1/2 px-4 lg:px-8 py-16">
         <div class="flex flex-col items-start gap-2">
-          <div ref="IconContainer" class="isolate flex mb-2 rounded-md bg-muted overflow-hidden">
-             <UIcon name="i-line-md-speed-loop" class="size-12 mx-2 my-2" />
+          <div v-intersection-observer.once="handleIntersection" class="isolate flex mb-2 rounded-md bg-muted overflow-hidden">
+             <UIcon v-if="isVisible" name="i-line-md-speed-loop" class="isolate size-12 mx-2 my-2" />
           </div>
           <h4>Frontend Development</h4>
           <p class="text-lg text-muted max-w-lg mb-4">
@@ -48,3 +48,18 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import { vIntersectionObserver } from '@vueuse/components';
+import { shallowRef } from 'vue';
+
+// State variable to control the icon's visibility
+const isVisible = shallowRef(false);
+
+function handleIntersection(entries: IntersectionObserverEntry[], observer: IntersectionObserver): void {
+  const entry = entries[0];
+
+  if (entry?.isIntersecting) {
+    isVisible.value = true;
+  }
+}
+</script>

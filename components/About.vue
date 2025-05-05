@@ -21,9 +21,9 @@
 
         <div class="border-b border-muted px-8 py-16">
           <div class="flex flex-col items-start gap-2">
-            <div ref="IconContainer1"
-              class="flex mb-2 rounded-md bg-muted overflow-hidden">
-              <UIcon name="i-line-md-github-loop" class="size-12 mx-2 my-2" />
+            <div v-intersection-observer.once="handleIntersection"
+              class="isolate flex mb-2 rounded-md bg-muted overflow-hidden">
+              <UIcon v-if="isVisible" name="i-line-md-github-loop" class="isolate size-12 mx-2 my-2" />
             </div>
             <h4>Wer bin ich?</h4>
             <p class="text-lg text-muted mb-4 max-w-lg">
@@ -39,9 +39,9 @@
 
         <div class="px-8 py-16">
           <div class="flex flex-col items-start gap-2">
-            <div ref="IconContainer2"
-              class="flex mb-2 rounded-md bg-muted overflow-hidden">
-              <UIcon name="i-line-md-star-pulsating-loop" class="size-12 mx-2 my-2" />
+            <div v-intersection-observer.once="handleIntersection2"
+              class="isolate flex mb-2 rounded-md bg-muted overflow-hidden">
+              <UIcon v-if="isVisible2" name="i-line-md-star-pulsating-loop" class="isolate size-12 mx-2 my-2" />
             </div>
             <h4>Certified UX Designer</h4>
             <p class="text-lg text-muted mb-4 max-w-lg">
@@ -68,6 +68,26 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { AccordionItem } from '@nuxt/ui'
+import { vIntersectionObserver } from '@vueuse/components';
+import { shallowRef } from 'vue';
+
+// State variable to control the icon's visibility
+const isVisible = shallowRef(false);
+const isVisible2 = shallowRef(false);
+
+function handleIntersection(entries: IntersectionObserverEntry[]) {
+  const entry = entries[0];
+  if (entry.isIntersecting) {
+    isVisible.value = true;
+  }
+}
+
+function handleIntersection2(entries: IntersectionObserverEntry[]) {
+  const entry = entries[0];
+  if (entry.isIntersecting) {
+    isVisible2.value = true;
+  }
+}
 
 const active = ref('0');
 
