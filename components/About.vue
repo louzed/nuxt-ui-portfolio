@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section id="about">
     <div class="border-b border-muted">
       <UContainer class="lg:flex py-16 lg:py-32 px-4 justify-center">
         <h2 class="max-w-5xl text-center">
@@ -62,7 +62,7 @@
         <UAccordion v-model="active" :items="items" />
       </UContainer>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
