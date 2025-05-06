@@ -17,7 +17,7 @@ function scrollIntoSection(sectionId: string) {
       'flex items-center font-medium h-8 px-3 rounded-md transition-colors',
       isActive
         ? 'bg-muted text-primary-400'
-        : 'hover:bg-muted hover:text-primary-500',
+        : 'hover:bg-muted hover:text-primary-500 cursor-pointer',
     ]"
     @click="scrollIntoSection(sectionId)"
   >
