@@ -9,24 +9,59 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeRouteUpdate, onBeforeRouteLeave } from 'vue-router'
-import { useRouter } from 'vue-router'
+  import { useRoute, useRouter } from 'vue-router'
+  import { nextTick, watch } from 'vue'
 
-const router = useRouter()
+  const route = useRoute()
 
-// deaktiviert das automatische Scrollen beim Seitenwechsel
-router.options.scrollBehavior = () => false
+  // Delay helper (replace with your actual transition time)
+  const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+
+  watch(
+    () => [route.fullPath, route.hash],
+    async ([to, hash], [from]) => {
+      await nextTick()
+
+      const fromPath = from?.split('#')[0] || ''
+      const toPath = to?.split('#')[0] || ''
+      const isSamePage = fromPath === toPath
+      const isHashLink = !!hash
+
+      if (isSamePage && isHashLink) {
+        // Smooth scroll on same page
+        const el = document.querySelector(hash)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' })
+        }
+      } else {
+        // Delay scroll if navigating from another page
+        await delay(350)
+        if (hash) {
+          const el = document.querySelector(hash)
+          if (el) {
+            el.scrollIntoView({ behavior: 'auto' })
+          } else {
+            window.scrollTo({ top: 0 })
+          }
+        } else {
+          window.scrollTo({ top: 0 })
+        }
+      }
+    }
+  )
 </script>
 
 <style>
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.4s;
+.page-leave-active,
+.page-enter-active {
+  transition: all 0.33s;
 }
+
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  filter: blur(0.5rem);
+  filter: blur(0.6rem);
+  translate: 0 40px;
 }
 </style>
 

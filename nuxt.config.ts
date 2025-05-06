@@ -24,7 +24,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',
     '@nuxt/eslint',
-    '@nuxt/image-edge'
+    '@nuxt/image-edge',
+    'nuxt-anchorscroll'
   ],
   css: ['~/assets/css/colors.css', '~/assets/css/fonts.css', '~/assets/css/main.css'],
   future: {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="border-b border-muted">
-      <UContainer class="lg:flex py-16 lg:py-32 !px-4 justify-center">
+      <UContainer class="lg:flex py-16 lg:py-32 px-4 justify-center">
         <h2 class="max-w-5xl text-center">
           Kreative und ansprechende Lösungen für komplexe Herausforderungen
         </h2>
@@ -30,7 +30,7 @@
               Ich gestalte Webseiten und andere digitale Produkte seit ca. 20 Jahren aus Leidenschaft. 
             </p>
             <div class="flex gap-2">
-              <DrawerOne />            
+              <DrawerCv />            
               <UButton to="https://github.com/louzed" target="_blank" icon="i-simple-icons-github" variant="ghost" color="neutral" size="lg" />
               <UButton to="https://dribbble.com/mbiereth" target="_blank" icon="i-mingcute-dribbble-fill" variant="ghost" color="neutral" size="lg" />
             </div>
@@ -48,8 +48,8 @@
               2022 absolvierte ich eine Weiterbildung zum UX/UI Designer und arbeite seitdem freiberuflich.
             </p>
             <div class="flex gap-2">
-              <DrawerTwo />
-              <DrawerThree />
+              <DrawerXdi />
+              <DrawerWebflow />
             </div>
           </div>
         </div>
@@ -76,16 +76,17 @@ const isVisible = shallowRef(false);
 const isVisible2 = shallowRef(false);
 
 function handleIntersection(entries: IntersectionObserverEntry[]) {
-  const entry = entries[0];
-  if (entry.isIntersecting) {
-    isVisible.value = true;
+  for (const entry of entries) {
+    if (entry.isIntersecting) {
+      isVisible.value = true;
+    }
   }
 }
-
 function handleIntersection2(entries: IntersectionObserverEntry[]) {
-  const entry = entries[0];
-  if (entry.isIntersecting) {
-    isVisible2.value = true;
+  for (const entry of entries) {
+    if (entry.isIntersecting) {
+      isVisible2.value = true;
+    }
   }
 }
 

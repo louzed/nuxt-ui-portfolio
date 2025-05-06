@@ -1,6 +1,6 @@
 <template>
   <div class="border-b border-muted">
-    <UContainer class="lg:flex py-16 lg:py-32 justify-center">
+    <UContainer class="lg:flex py-16 px-4 lg:py-32 justify-center">
       <h2 class="max-w-5xl text-center">
         Moderne und skalierbare Anwendungen für innovative Unternehmen
       </h2>

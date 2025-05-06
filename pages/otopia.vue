@@ -34,7 +34,7 @@
   </div>
 
   <div class="border-b-1 border-muted">
-    <UContainer class="flex flex-col lg:flex-row lg:border-r lg:border-l border-muted">
+    <UContainer class="lg:flex lg:border-r lg:border-l border-muted">
       <div class="lg:border-r-1 order-2 lg:order-1 border-muted lg:w-1/2 lg:py-12">
         <img src="/images/oto01.png" alt="Hochschulstart" class="min-w-full bg-muted aspect-3/2 object-cover" />
       </div>
@@ -50,7 +50,7 @@
   </div>
 
   <div class="border-b-1 border-muted">
-    <UContainer class="flex flex-col lg:flex-row lg:border-r lg:border-l border-muted">
+    <UContainer class="lg:flex lg:border-r lg:border-l border-muted">
       <div class="flex flex-col lg:w-1/2 justify-center lg:border-r-1 border-muted px-8 pt-16 pb-10 lg:pt-16 lg:pb-16">
         <div class="flex flex-col items-center lg:items-end gap-3">
           <h4 class="text-center">Projektübersicht</h4>
@@ -66,7 +66,7 @@
   </div>
 
   <div class="border-b-1 border-muted">
-    <UContainer class="flex flex-col lg:flex-row lg:border-r lg:border-l border-muted">
+    <UContainer class="lg:flex lg:border-r lg:border-l border-muted">
       <div class="lg:border-r-1 order-2 lg:order-1 border-muted lg:w-1/2 lg:py-12">
         <img src="/images/oto03.png" alt="Hochschulstart" class="min-w-full bg-muted aspect-3/2 object-cover" />
       </div>
@@ -82,7 +82,7 @@
   </div>
 
   <div class="border-b-1 border-muted">
-    <UContainer class="flex flex-col lg:flex-row lg:border-r lg:border-l border-muted">
+    <UContainer class="lg:flex lg:border-r lg:border-l border-muted">
       <div class="flex flex-col lg:w-1/2 justify-center lg:border-r-1 border-muted px-8 pt-16 pb-10 lg:pt-16 lg:pb-16">
         <div class="flex flex-col items-center lg:items-end gap-3">
           <h4 class="text-center">Styleguide</h4>
@@ -98,7 +98,7 @@
   </div>
 
   <div class="border-b-1 border-muted">
-    <UContainer class="flex flex-col lg:flex-row lg:border-r lg:border-l border-muted">
+    <UContainer class="lg:flex lg:border-r lg:border-l border-muted">
       <div class="lg:border-r-1 order-2 lg:order-1 border-muted lg:w-1/2 lg:py-12">
         <img src="/images/oto05.png" alt="Hochschulstart" class="min-w-full bg-muted aspect-3/2 object-cover" />
       </div>

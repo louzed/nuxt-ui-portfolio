@@ -1,5 +1,5 @@
 <template>
-    <div ref="carousel" class="logo-carousel overflow-hidden whitespace-nowrap py-20 lg:py-40">
+    <div ref="carousel" class="logo-carousel overflow-hidden whitespace-nowrap border-b border-muted py-20 lg:py-40">
         <div class="logo-track inline-flex">
             <img v-for="(logo, i) in logos" :key="i" :src="logo"
                 class="h-6 lg:h-10 mx-4 lg:mx-8 opacity-80 hover:opacity-100 transition-opacity" />

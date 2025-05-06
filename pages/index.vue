@@ -5,8 +5,8 @@
       <Services />
     </section>
 
-    <section id="projects" ref="projectsSection">
-      <Projects />
+    <section id="projects" ref="projectSection">
+      <ProjectSection />
     </section>
 
     <section id="about" ref="aboutSection">
@@ -21,7 +21,7 @@ import { useIntersectionObserver } from '@vueuse/core';
 
 // Refs to your sections
 const heroSection = ref<HTMLElement | null>(null);
-const projectsSection = ref<HTMLElement | null>(null);
+const projectSection = ref<HTMLElement | null>(null);
 const aboutSection = ref<HTMLElement | null>(null);
 
 // Access the shared state (MUST use the same key as in the header)
@@ -77,7 +77,7 @@ const { stop: stopObservingHero } = useIntersectionObserver(
 
 // Observe the projects section
 const { stop: stopObservingProjects } = useIntersectionObserver(
-  projectsSection,
+  projectSection,
   handleIntersection,
   { threshold: 0.1 }
 );
@@ -94,11 +94,18 @@ const { stop: stopObservingAbout } = useIntersectionObserver(
 
 
 useHead({
-  title: "Markus Biereth - UX/UI Design & Frontend Development in Mainfranken",
+  title: "Markus Biereth - UX/UI Design & Webdesign in Mainfranken",
   meta: [
     {
-      name: "description",
-      content: "Willkommen auf meinem Portfolio. Entdecke meine Projekte im Bereich UX/UI Design.",
+      name: "Markus Biereth",
+      content: "Willkommen auf meinem Portfolio.",
+    },
+  ],
+  link: [
+    {
+      rel: "icon",
+      type: "image/x-icon",
+      href: "/favicon.ico",
     },
   ],
 });
