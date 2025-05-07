@@ -21,12 +21,7 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
-  modules: [
-    '@nuxt/ui',
-    '@nuxt/eslint',
-    '@nuxt/image-edge',
-    'nuxt-anchorscroll'
-  ],
+  modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/image-edge', 'nuxt-anchorscroll', '@nuxtjs/i18n'],
   css: ['~/assets/css/colors.css', '~/assets/css/fonts.css', '~/assets/css/main.css'],
   future: {
     compatibilityVersion: 4
