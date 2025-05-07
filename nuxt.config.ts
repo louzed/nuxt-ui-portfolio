@@ -22,6 +22,15 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/image-edge', 'nuxt-anchorscroll', '@nuxtjs/i18n'],
+
+  i18n: {
+    defaultLocale: 'de',
+    locales: [
+      { code: 'en', name: 'English', file: 'en.json' },
+      { code: 'de', name: 'Deutsch', file: 'de.json' }
+    ]
+  },
+
   css: ['~/assets/css/colors.css', '~/assets/css/fonts.css', '~/assets/css/main.css'],
   future: {
     compatibilityVersion: 4
