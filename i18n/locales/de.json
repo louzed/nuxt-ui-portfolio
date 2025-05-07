@@ -1,4 +1,9 @@
 {
+  "nav": {
+    "start": "Startseite",
+    "projects": "Projekte",
+    "about": "Uber mich"
+  },
   "about": {
     "hero": "Kreative & attraktive Lösungen für komplexe Herausforderungen",
     "imageAlt": "Beschreibung des Bildes",

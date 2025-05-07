@@ -77,14 +77,23 @@
 <script setup lang="ts">
 import SectionLink from './SectionLink.vue';
 import { useState } from '#imports';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+
+const navLinks = computed(() => [
+  { name: t('nav.start'), id: 'hero' },
+  { name: t('nav.projects'), id: 'projects' },
+  { name: t('nav.about'), id: 'about' }
+]);
 
 const activeSectionId = useState<string>('activeSection');
 
 const { locales, setLocale } = useI18n();
 
-const navLinks = [
-  { name: 'Startseite', id: 'hero' },
-  { name: 'Projekte', id: 'projects' },
-  { name: 'Über mich', id: 'about' }
-];
+// const navLinks = [
+//   { name: 'Startseite', id: 'hero' },
+//   { name: 'Projekte', id: 'projects' },
+//   { name: 'Über mich', id: 'about' }
+// ];
 </script>
