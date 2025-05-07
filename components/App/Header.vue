@@ -3,7 +3,16 @@
     <UContainer class="grid grid-cols-[1fr_auto_1fr] h-16 items-center !px-8">
       <nav class="nav flex items-center justify-start">
         <ul class="flex gap-2">
-          <li>
+          <li v-for="link in navLinks" :key="link.id">
+            <ClientOnly>
+              <SectionLink
+                :name="link.name"
+                :section-id="link.id"
+                :is-active="activeSectionId === link.id"
+              />
+            </ClientOnly>
+          </li>
+          <!-- <li>
             <ClientOnly>
               <NuxtLink 
                 to="/#hero"
@@ -29,7 +38,7 @@
                 Über mich
               </NuxtLink>
             </ClientOnly>
-          </li>
+          </li> -->
         </ul>
       </nav>
 
@@ -59,7 +68,14 @@
 
 
 <script setup lang="ts">
+import SectionLink from './SectionLink.vue';
 import { useState } from '#imports';
 
 const activeSectionId = useState<string>('activeSection');
+
+const navLinks = [
+  { name: 'Startseite', id: 'hero' },
+  { name: 'Projekte', id: 'projects' },
+  { name: 'Über mich', id: 'about' }
+];
 </script>

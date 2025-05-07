@@ -1,28 +1,30 @@
 <template>
+  <section id="projects">
     <div ref="carousel" class="logo-carousel overflow-hidden whitespace-nowrap border-b border-muted py-20 lg:py-40">
-        <div class="logo-track inline-flex">
-            <img v-for="(logo, i) in logos" :key="i" :src="logo"
-                class="h-6 lg:h-10 mx-4 lg:mx-8 opacity-80 hover:opacity-100 transition-opacity" />
-            <img v-for="(logo, i) in logos" :key="'dup-' + i" :src="logo"
-                class="h-6 lg:h-10 mx-4 lg:mx-8 opacity-80 hover:opacity-100 transition-opacity" />
-        </div>
+      <div class="logo-track inline-flex">
+        <img v-for="(logo, i) in logos" :key="i" :src="logo"
+          class="h-6 lg:h-10 mx-4 lg:mx-8 opacity-80 hover:opacity-100 transition-opacity" />
+        <img v-for="(logo, i) in logos" :key="'dup-' + i" :src="logo"
+          class="h-6 lg:h-10 mx-4 lg:mx-8 opacity-80 hover:opacity-100 transition-opacity" />
+      </div>
     </div>
+  </section>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const logos = [
-    '/svg/client01.svg',
-    '/svg/client02.svg',
-    '/svg/client03.svg',
-    '/svg/client04.svg',
-    '/svg/client05.svg',
-    '/svg/client06.svg',
-    '/svg/client07.svg',
-    '/svg/client08.svg',
+  '/svg/client01.svg',
+  '/svg/client02.svg',
+  '/svg/client03.svg',
+  '/svg/client04.svg',
+  '/svg/client05.svg',
+  '/svg/client06.svg',
+  '/svg/client07.svg',
+  '/svg/client08.svg',
 ]
-const carousel = ref<HTMLElement|null>(null)
+const carousel = ref<HTMLElement | null>(null)
 let rafId: number
 let pos = 0             // float accumulator
 const speed = 0.5      // px/frame
@@ -53,15 +55,15 @@ onMounted(() => {
 
 <style scoped>
 .logo-track>* {
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 .logo-carousel img {
-    filter: none;
-    transition: filter 0.2s;
+  filter: none;
+  transition: filter 0.2s;
 }
 
 .dark .logo-carousel img {
-    filter: brightness(1);
+  filter: brightness(1);
 }
 </style>
