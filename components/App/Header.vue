@@ -13,12 +13,11 @@
             </ClientOnly>
           </li>
           <li>
-            <button 
-              class="flex items-center font-medium h-8 px-3 rounded-md transition-colors"
-              v-for="locale in locales" @click="setLocale(locale.code)">
+            <button v-for="locale in locales" @click="setLocale(locale.code)">
               {{ locale.name }}
             </button>
           </li>
+         
           <!-- <li>
             <ClientOnly>
               <NuxtLink 

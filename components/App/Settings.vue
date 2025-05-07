@@ -2,22 +2,22 @@
   <ClientOnly>
     <UButtonGroup>
       <UButton
-        :aria-label="`Switch to ${nextTheme} mode`"
-        :icon="colorMode.value === 'dark' ? 'i-line-md-sunny-filled-loop-to-moon-filled-loop-transition' : 'i-line-md-sun-rising-filled-loop'"
-        :label="colorMode.value === 'dark' ? 'Dark' : 'Light'"
-        color="neutral"
-        variant="outline"
-        size="md"
-        class="rounded-md"
-        @click="startViewTransition"
+      :aria-label="`Switch to ${nextTheme} mode`"
+      :icon="colorMode.value === 'dark' ? 'i-line-md-sunny-filled-loop-to-moon-filled-loop-transition' : 'i-line-md-sun-rising-filled-loop'"
+      :label="colorMode.value === 'dark' ? 'Dark' : 'Light'"
+      color="neutral"
+      variant="outline"
+      size="md"
+      class="rounded-md"
+      @click="startViewTransition"
       />
       <UButton
-        aria-label="Switch to German language"
-        icon="i-mdi-world"
-        color="neutral"
-        variant="outline"
-        label="Deutsch"
-        size="md"
+      aria-label="Switch to German language"
+      icon="i-mdi-world"
+      color="neutral"
+      variant="outline"
+      label="Deutsch"
+      size="md"
       />  
     </UButtonGroup>
   </ClientOnly>
@@ -39,6 +39,8 @@
 </style>
 
 <script setup lang="ts">
+
+
 const colorMode = useColorMode()
 
 const nextTheme = computed(() => (colorMode.value === "dark" ? "light" : "dark"));
