@@ -5,7 +5,7 @@
         <div class="flex lg:w-1/2 justify-start items-center px-4 lg:px-8 py-20 border-r-1 border-muted">
           <div class="flex flex-col items-start gap-2">
             <ClientOnly>
-              <img :src="getImage('avatar')" alt="Markus Biereth" class="w-28 h-28 mb-4 rounded-full" />
+              <img src="/images/avatar.png" alt="Markus Biereth" class="w-28 h-28 bg-elevated mb-4 rounded-full" />
             </ClientOnly>
             <div class="flex mb-2">
               <UBadge icon="i-svg-spinners-pulse-multiple" size="md" color="success" variant="outline" class="rounded-full">
