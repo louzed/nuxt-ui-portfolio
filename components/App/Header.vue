@@ -12,6 +12,13 @@
               />
             </ClientOnly>
           </li>
+          <li>
+            <button 
+              class="flex items-center font-medium h-8 px-3 rounded-md transition-colors"
+              v-for="locale in locales" @click="setLocale(locale.code)">
+              {{ locale.name }}
+            </button>
+          </li>
           <!-- <li>
             <ClientOnly>
               <NuxtLink 
@@ -72,6 +79,8 @@ import SectionLink from './SectionLink.vue';
 import { useState } from '#imports';
 
 const activeSectionId = useState<string>('activeSection');
+
+const { locales, setLocale } = useI18n();
 
 const navLinks = [
   { name: 'Startseite', id: 'hero' },

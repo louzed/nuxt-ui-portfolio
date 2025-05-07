@@ -1,3 +1,15 @@
 {
-  "welcome": "Welcome"
+  "about": {
+    "hero": "Creative & attractive solutions for complex challenges",
+    "imageAlt": "Image description",
+    "section1": {
+      "title": "Who am I?",
+      "description": "I've been designing websites and other digital products for about 20 years out of passion."
+    },
+    "section2": {
+      "title": "Certified UX Designer",
+      "description": "In 2022, I completed a UX/UI design course and have been working freelance ever since."
+    }
+  }
 }
+

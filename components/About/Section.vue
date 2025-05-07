@@ -2,7 +2,10 @@
 
   <div class="border-b border-muted">
     <UContainer class="py-24 !px-4">
-      <h2 class="max-w-5xl mx-auto text-center">Kreative & attraktive Lösungen für komplexe Herausforderungen</h2>
+      <h2 class="max-w-5xl mx-auto text-center">
+        <!-- Kreative & attraktive Lösungen für komplexe Herausforderungen -->
+        {{ $t('about.hero') }}
+      </h2>
     </UContainer>
   </div>
 
@@ -19,7 +22,10 @@
           <div v-intersection-observer.once="handleIntersection" class="isolate flex mb-4 size-16 rounded-md bg-muted">
             <UIcon v-if="isVisible" name="i-line-md-github-loop" class="size-12 mx-auto my-auto" />
           </div>
-          <h4>Wer bin ich?</h4>
+          <h4>
+            <!-- Wer bin ich? -->
+            {{ $t('about.section1.title') }}
+          </h4>
           <p class="text-lg text-muted mb-6 max-w-lg">
             Ich gestalte Webseiten und andere digitale Produkte seit ca. 20 Jahren aus Leidenschaft.
           </p>

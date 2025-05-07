@@ -1,3 +1,14 @@
 {
-  "welcome": "Welcome"
+  "about": {
+    "hero": "Kreative & attraktive Lösungen für komplexe Herausforderungen",
+    "imageAlt": "Beschreibung des Bildes",
+    "section1": {
+      "title": "Wer bin ich?",
+      "description": "Ich gestalte Webseiten und andere digitale Produkte seit ca. 20 Jahren aus Leidenschaft."
+    },
+    "section2": {
+      "title": "Certified UX Designer",
+      "description": "2022 absolvierte ich eine Weiterbildung zum UX/UI Designer und arbeite seitdem freiberuflich."
+    }
+  }
 }
