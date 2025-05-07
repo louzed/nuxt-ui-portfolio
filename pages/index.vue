@@ -11,7 +11,9 @@
 
     <section id="about" ref="aboutSection">
       <About />
+      <AppContact />
     </section>
+
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
-    <Logos />
+    <ProjectLogos />
 
-    <ProjectItem
+    <ProjectCard
     to="/hochschulstart"
     image="/images/hss00.png"
     title="Barrierefrei an Hochschulen bewerben"
@@ -11,7 +11,7 @@
     transition-name="project-image-hochschulstart"
     />
 
-    <ProjectItem
+    <ProjectCard
     to="/carnabo"
     image="/images/car00.png"
     title="Auto-Abos finden und vergleichen"
@@ -21,7 +21,7 @@
     transition-name="project-image-carnabo"
     />
 
-    <ProjectItem
+    <ProjectCard
     to="/otopia"
     image="/images/oto00.png"
     title="Open Source fördern und verbinden"
@@ -30,4 +30,6 @@
     :badges="['UX/UI Design', 'Prototyp', 'Figma']"
     transition-name="project-image-otopia"
     />
+
+    <ProjectSlideshow />
 </template>
