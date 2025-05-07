@@ -4,12 +4,12 @@
         class="flex flex-col bg-muted py-16 !px-4 items-center justify-center relative overflow-hidden">
         <div
           v-intersection-observer.once="handleIntersection"
-          class="isolate flex justify-center items-center rounded-md overflow-hidden"
+          class="size-16 flex justify-center items-center rounded-md overflow-hidden mb-4"
         >
           <UIcon
             v-if="isVisible"
             name="i-line-md-coffee-half-empty-filled-loop"
-            class="isolate size-16 mb-4"
+            class="isolate size-16"
           />
         </div>
         <h3 class="text-center mb-2 text-foreground">Lassen Sie uns sprechen</h3>

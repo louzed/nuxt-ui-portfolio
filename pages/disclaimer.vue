@@ -51,11 +51,13 @@
   </script>
   
   <style scoped>
-  /* Prose Klassen von Nuxt UI/Typography sollten das Styling übernehmen */
-  /* Füge hier bei Bedarf spezifische Styles hinzu */
+  h1 {
+    margin-bottom: 1.2em;
+  }
+
   h3 {
     margin-top: 1.2em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.6em;
   }
 
   a {

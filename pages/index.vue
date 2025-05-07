@@ -10,7 +10,7 @@
     </section>
 
     <section id="about" ref="aboutSection">
-      <About />
+      <AboutSection />
       <AppContact />
     </section>
 

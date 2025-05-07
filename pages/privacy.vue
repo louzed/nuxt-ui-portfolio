@@ -92,13 +92,12 @@
   /* Prose Klassen von Nuxt UI/Typography sollten das Styling übernehmen */
   /* Füge hier bei Bedarf spezifische Styles hinzu */
   h2 {
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    padding-bottom: 0.3em;
+    margin-top: 1.6em;
+    margin-bottom: 1em;
   }
   h3 {
-     margin-top: 1.5em;
-     margin-bottom: 0.5em;
+     margin-top: 1.2em;
+     margin-bottom: 0.6em;
   }
   address {
     margin-bottom: 1em;
