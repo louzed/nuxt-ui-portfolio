@@ -1,7 +1,20 @@
+<script setup lang="ts">
+import { vIntersectionObserver } from '@vueuse/components';
+import { ref } from 'vue';
+
+const isVisible = ref(false);
+
+function handleIntersection(entries: IntersectionObserverEntry[]): void {
+  if (entries[0]?.isIntersecting) {
+    isVisible.value = true;
+  }
+}
+</script>
+
 <template>
   <div class="border-b border-muted">
     <UContainer class="flex flex-col py-24 !px-4">
-      <h2 class="max-w-5xl mx-auto text-center">Moderne & skalierbare Anwendungen für innovative Unternehmen</h2>
+      <h2 class="max-w-5xl mx-auto text-center">{{ $t('services.header') }}</h2>
     </UContainer>
   </div>
 
@@ -48,15 +61,3 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { vIntersectionObserver } from '@vueuse/components';
-import { ref } from 'vue';
-
-const isVisible = ref(false);
-
-function handleIntersection(entries: IntersectionObserverEntry[]): void {
-  if (entries[0]?.isIntersecting) {
-    isVisible.value = true;
-  }
-}
-</script>

@@ -4,6 +4,25 @@
     "projects": "Projekte",
     "about": "Uber mich"
   },
+  "services": {
+    "header": "Moderne & skalierbare Anwendungen für innovative Unternehmen",
+    "uxdesign": {
+      "title": "UX & UI Design",
+      "description": "Von der Zielgruppenanalyse über Wireframes, Design Systemen und Prototyping gestalte ich Produkte und Software, die Ihre Kunden begeistern und zu treuen Vertretern Ihrer Marke machen.",
+      "figma": "Figma",
+      "adobe": "Adobe",
+      "sketch": "Sketch"
+    },
+    "frontdev": {
+      "title": "Frontend Development",
+      "description": "Vom Prototypen zum interaktiven Erlebnis: Mit den passenden Werkzeugen – ob Code oder effiziente Webbuilder – sorge ich für eine technische Basis, die schnell, sicher und responsiv ist.",
+      "html": "HTML/CSS",
+      "nuxt": "NuxtJS",
+      "tailwind": "Tailwind",
+      "cms": "Cms",
+      "seo": "Seo"
+    }
+  },
   "about": {
     "hero": "Kreative & attraktive Lösungen für komplexe Herausforderungen",
     "imageAlt": "Beschreibung des Bildes",
