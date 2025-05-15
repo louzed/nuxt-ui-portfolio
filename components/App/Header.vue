@@ -1,3 +1,15 @@
+<script setup lang="ts">
+import SectionLink from './SectionLink.vue';
+import { useState } from '#imports';
+
+const activeSectionId = useState<string>('activeSection');
+
+const navLinks = [
+  { name: 'Startseite', id: 'hero' },
+  { name: 'Projekte', id: 'projects' },
+  { name: 'Über mich', id: 'about' }
+];
+</script>
 <template>
   <header class="sticky top-0 z-40 bg-default border-muted border-b shadow-none">
     <UContainer class="grid grid-cols-[1fr_auto_1fr] h-16 items-center !px-8">
@@ -12,39 +24,6 @@
               />
             </ClientOnly>
           </li>
-          <li>
-            <button v-for="locale in locales" @click="setLocale(locale.code)">
-              {{ locale.name }}
-            </button>
-          </li>
-         
-          <!-- <li>
-            <ClientOnly>
-              <NuxtLink 
-                to="/#hero"
-                :class="['flex items-center font-medium hover:bg-muted hover:text-primary-500 h-8 px-3 rounded-md', { 'text-primary-400 bg-muted': activeSectionId === 'hero' }]">
-                Startseite
-              </NuxtLink>
-            </ClientOnly>
-          </li>
-          <li>
-            <ClientOnly>
-              <NuxtLink 
-                to="/#projects"
-                :class="['flex items-center font-medium hover:bg-muted hover:text-primary-500 h-8 px-3 rounded-md', { 'text-primary-400 bg-muted': activeSectionId === 'projects' }]">
-                Projekte
-              </NuxtLink>
-            </ClientOnly>
-          </li>
-          <li>
-            <ClientOnly>
-              <NuxtLink 
-                to="/#about"
-                :class="['flex items-center font-medium hover:bg-muted hover:text-primary-500 h-8 px-3 rounded-md', { 'text-primary-400 bg-muted': activeSectionId === 'about' }]">
-                Über mich
-              </NuxtLink>
-            </ClientOnly>
-          </li> -->
         </ul>
       </nav>
 
@@ -73,26 +52,3 @@
 </template>
 
 
-<script setup lang="ts">
-import SectionLink from './SectionLink.vue';
-import { useState } from '#imports';
-import { useI18n } from 'vue-i18n';
-
-const { t } = useI18n();
-
-const navLinks = computed(() => [
-  { name: t('nav.start'), id: 'hero' },
-  { name: t('nav.projects'), id: 'projects' },
-  { name: t('nav.about'), id: 'about' }
-]);
-
-const activeSectionId = useState<string>('activeSection');
-
-const { locales, setLocale } = useI18n();
-
-// const navLinks = [
-//   { name: 'Startseite', id: 'hero' },
-//   { name: 'Projekte', id: 'projects' },
-//   { name: 'Über mich', id: 'about' }
-// ];
-</script>

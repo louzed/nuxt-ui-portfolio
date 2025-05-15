@@ -21,6 +21,6 @@ function scrollIntoSection(sectionId: string) {
     ]"
     @click="scrollIntoSection(sectionId)"
   >
-    {{ name }}
+    {{ $t(name) }}
   </button>
 </template>

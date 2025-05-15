@@ -1,45 +1,12 @@
-<template>
-  <ClientOnly>
-    <UButtonGroup>
-      <UButton
-      :aria-label="`Switch to ${nextTheme} mode`"
-      :icon="colorMode.value === 'dark' ? 'i-line-md-sunny-filled-loop-to-moon-filled-loop-transition' : 'i-line-md-sun-rising-filled-loop'"
-      :label="colorMode.value === 'dark' ? 'Dark' : 'Light'"
-      color="neutral"
-      variant="outline"
-      size="md"
-      class="rounded-md"
-      @click="startViewTransition"
-      />
-      <UButton
-      aria-label="Switch to German language"
-      icon="i-mdi-world"
-      color="neutral"
-      variant="outline"
-      label="Deutsch"
-      size="md"
-      />  
-    </UButtonGroup>
-  </ClientOnly>
-</template>
-
-<style>
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-::view-transition-new(root) {
-  z-index: 9999;
-}
-::view-transition-old(root) {
-  z-index: 1;
-}
-</style>
-
 <script setup lang="ts">
+import { useI18n } from '#imports'
+const { locale } = useI18n()
 
+const nextLocale = computed(() => (locale.value === 'en' ? 'de' : 'en'))
+
+const toggleLanguage = () => {
+  locale.value = nextLocale.value
+}
 
 const colorMode = useColorMode()
 
@@ -84,3 +51,45 @@ const startViewTransition = (event: MouseEvent) => {
   })
 }
 </script>
+<template>
+  <ClientOnly>
+    <UButtonGroup>
+      <UButton
+        :aria-label="`Switch to ${nextTheme} mode`"
+        :icon="colorMode.value === 'dark' ? 'i-line-md-sunny-filled-loop-to-moon-filled-loop-transition' : 'i-line-md-sun-rising-filled-loop'"
+        :label="colorMode.value === 'dark' ? 'Dark' : 'Light'"
+        color="neutral"
+        variant="outline"
+        size="md"
+        class="rounded-md"
+        @click="startViewTransition"
+      />
+      <UButton
+        :aria-label="`Switch to ${nextLocale} language`"
+        icon="i-mdi-translate"
+        :label="nextLocale === 'de' ? 'Deutsch' : 'English'"
+        color="neutral"
+        variant="outline"
+        size="md"
+        class="rounded-md"
+        @click="toggleLanguage"
+      />
+    </UButtonGroup>
+  </ClientOnly>
+</template>
+
+<style>
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+</style>
+

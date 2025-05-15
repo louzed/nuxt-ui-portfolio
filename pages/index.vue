@@ -18,6 +18,7 @@
 </template>
 
 <script setup lang="ts">
+import Services from '~/components/Services/Services.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useIntersectionObserver } from '@vueuse/core';
 
